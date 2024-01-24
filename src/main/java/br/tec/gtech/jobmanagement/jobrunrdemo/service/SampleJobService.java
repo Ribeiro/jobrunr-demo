@@ -18,7 +18,6 @@ public class SampleJobService {
 
     @Job(name = "The sample job with variable %0", retries = 2)
     public void executeSampleJob(String variable) {
-
         logger.info("The sample job has begun. The variable you passed is {}", variable);
         try {
             Thread.sleep(EXECUTION_TIME);
@@ -29,8 +28,9 @@ public class SampleJobService {
             logger.info("Sample job has finished...");
         }
     }
-
+     
     public int getNumberOfInvocations() {
         return count.get();
     }
+    
 }
